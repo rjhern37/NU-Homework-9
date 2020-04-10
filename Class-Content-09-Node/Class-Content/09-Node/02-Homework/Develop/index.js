@@ -26,81 +26,74 @@ const questions = [
 
     },
 
-    // {
-    //     //ask the user for a URL of the project
-    //     type: "input",
-    //     name: "URL",
-    //     message: "What is URL to your project?",
 
-    // },
+    //ask the user for their email 
 
-    // //ask the user for their email 
+    {
+        //ask the user for a project name 
+        type: "input",
+        name: "projectTitle",
+        message: "What is your git hub Project Name?",
 
-    // {
-    //     //ask the user for a project name 
-    //     type: "input",
-    //     name: "projectTitle",
-    //     message: "What is your git hub Project Name?",
-
-    // },
+    },
 
 
-    // {
-    //     //ask the user for a description of the project 
-    //     type: "input",
-    //     name: "description",
-    //     message: "Please provide a short description of your project.",
+    {
+        //ask the user for a description of the project 
+        type: "input",
+        name: "description",
+        message: "Please provide a short description of your project.",
 
-    // },
+    },
 
 
-    // {
-    //     type: "list",
-    //     name: "license",
-    //     message: "What kind of license should your project have?",
-    //     choices: ["MIT", "APACHE 2.0", "GPL", "BSD3", "NONE"]
-    // },
+    {
+        type: "list",
+        name: "license",
+        message: "What kind of license should your project have?",
+        choices: ["MIT", "APACHE 2.0", "GPL", "BSD3", "NONE"]
+    },
 
 
 
 
-    // {
-    //     //ask the user what commands should be run to install dependencies 
-    //     type: "input",
-    //     name: "dependencies",
-    //     message: "What command should we run to install dependencies?",
-    //     default: "npm i"
+    {
+        //ask the user what commands should be run to install dependencies 
+        type: "input",
+        name: "install",
+        message: "What command should we run to install dependencies?",
+        default: "npm i"
 
-    // },
+    },
 
-    // {
-    //     //ask what command to run test for the app 
-    //     type: "input",
-    //     name: "runTest",
-    //     message: "What command should be ran to run tests?",
-    //     default: "npm test"
+    {
+        //ask what command to run test for the app 
+        type: "input",
+        name: "runTest",
+        message: "What command should be ran to run tests?",
+        default: "npm test"
 
-    // },
+    },
 
-    // {
-    //     //ask does the user what they need to know about using the repo 
-    //     type: "input",
-    //     name: "usage",
-    //     message: "What does the user need to know about using the repo?",
+    {
+        //ask does the user what they need to know about using the repo 
+        type: "input",
+        name: "usage",
+        message: "What does the user need to know about using the repo?",
 
-    // },
+    },
 
-    // {
-    //     type: "input",
-    //     name: "contribution",
-    //     message: "What does the user need to know about contributing to the repo?",
+    {
+        type: "input",
+        name: "contribution",
+        message: "What does the user need to know about contributing to the repo?",
 
-    // }
+    }
 
 ];
 
 function writeToFile(fileName, data) {
-    return fs.writeFileSync(path.join(fileName), data);
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 
 
 
@@ -113,15 +106,16 @@ function init() {
         //  api.getUser(answers.githubName)
 
 
-
+    
         api.getUser(answers.githubName).then(function (data) {
+            //console.log(data.data);
             let allData = { ...answers, ...data.data };
-            console.log(allData)
+            //console.log(allData)
 
-            let readMeMarkUp = generateMarkdown(allData);
-
-            writeToFile("ReadMe.md", readMeMarkUp);
-        })
+            //let readMeMarkUp = generateMarkdown(allData);
+            //generateMarkdown(allData);
+            writeToFile("README.md", generateMarkdown(allData));
+       })
     })
 
 
