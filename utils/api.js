@@ -2,10 +2,16 @@
 const axios = require("axios");
 
 
+var config = {
+  headers: {'Authorization': process.env.API_KEY}
+}
+
+
+
 const api = {
   getUser(username) {
     return axios
-      .get(`https://api.github.com/users/${username}`)
+      .get(`https://api.github.com/users/${username}`, config) 
       .then (response => response)
       .catch(err => {
         console.log("Uh oh", err);
@@ -13,26 +19,6 @@ const api = {
       })
 
   }
-
-  //TUTOR SOLUTION
-  // console.log(username);
-
-
-
-  //GitHub API;
-  // https://api.github.com/users/joeyrodrigues92/events/public
-
-
-  //  axios.get(`https://api.github.com/users/${ username }/events/public`)
-  //  .then(function (response) {
-  //    // handle success
-  //    console.log(response);
-  //  })
-  //  .catch(function (error) {
-  //    // handle error
-  //    console.log(error);
-  //  })
-
 };
 
 

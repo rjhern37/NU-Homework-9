@@ -7,11 +7,14 @@ const fs = require("fs");
 //require the path package 
 const path = require("path");
 
+//require dotenv to hide environment variables
+require('dotenv').config()
+
 const api = require("./utils/api");
 
 const generateMarkdown = require("./utils/generateMarkdown");
 
-
+console.log(process.env)
 
 // const axios = require ("axios")
 
@@ -50,7 +53,7 @@ const questions = [
     {
         type: "list",
         name: "license",
-        message: "What kind of license should your project have?",
+        message: "What license should your project have?",
         choices: ["MIT", "APACHE 2.0", "GPL", "BSD3", "NONE"]
     },
 

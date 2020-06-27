@@ -7,10 +7,11 @@ function generateProjectUrl(github, title) {
 
 
 function generateMarkdown(data) {
-  console.log(data);
+  // console.log(data);
   return `
 # Project Title 
 ${data.projectTitle}
+
 
 # Project URL
 ${generateProjectUrl(data.githubName, data.projectTitle)}
@@ -37,16 +38,21 @@ ${data.usage}
 ${data.runTest}
 
 ## License
-${data.license}
+${renderBadge(data.license)}
 
 ## Picture
-${data.avatar_url + ".png"}
+<img src="${data.avatar_url}"/>
 
 ## Email
 ${data.email}
-
-
 `;
+}
+
+function renderBadge(license){
+  if(license !== "NONE"){
+    return `<img src="https://img.shields.io/badge/license-${license}-blue.svg"/>`
+  } 
+  return ""
 }
 
 module.exports = generateMarkdown;
