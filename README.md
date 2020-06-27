@@ -31,7 +31,8 @@ node index
 ```
 Then the user will be prompted a series of questions about what is being used to develop their project. Below is a short demo of the running application.
 
-<img alt="app visual demo" src="assets/CLI-DEMO.gif"/>
+<img alt="app visual demo" src="assets/Demo-002.gif"/>
+<img alt="Continuing app visual demo" src="assets/Demo-003.gif"/>
 
 
 ## Test

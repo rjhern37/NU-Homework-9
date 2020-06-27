@@ -14,9 +14,8 @@ const api = require("./utils/api");
 
 const generateMarkdown = require("./utils/generateMarkdown");
 
-console.log(process.env)
+// console.log(process.env)
 
-// const axios = require ("axios")
 
 
 const questions = [
