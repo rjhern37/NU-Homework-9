@@ -1,13 +1,13 @@
 
 # Project Title 
-README-GENERATOR
+Fitness-Tracker
 
 
 # Project URL
-https://github.com/Rjhern37/readme-generator
+https://github.com/rjhern37/fitness-tracker
 
 ## Description 
-This is a repo which consists of a command line application that allows the user to generate a fully customizable MarkDown file for the project of their choice.
+This is an app that allows you to track workouts. It allows you to log cardio sessions, weight training sessions and compare those results. Simply enter details about the exercise that you plan to complete and your stats will be displayed.
 
 ## Table of Contents
 * [Installation](#installation)
@@ -19,35 +19,22 @@ This is a repo which consists of a command line application that allows the user
 
 
 ## Installation
-Clone the repo using your preffered CLI and simply run this command
+After cloning the repo, enter the following command into your CLI...
 ```sh
-npm install
+npm i
 ```
 
 ## Usage
-To start the application, type the command below 
-```sh
-node index
-```
-Then the user will be prompted a series of questions about what is being used to develop their project. Below is a short demo of the running application.
-
-<img alt="app visual demo" src="assets/Demo-002.gif"/>
-<img alt="Continuing app visual demo" src="assets/Demo-003.gif"/>
-
+Simply download and enjoy!
 
 ## Test
-There is no testing for this application, however if there was the user would simply type 
-```sh
-npm test
-```
+There are currently no tests for this app.
 
 ## License
-<img src="https://img.shields.io/badge/license-APACHE 2.0-blue.svg"/>
+
 
 ## Picture
 <img src="https://avatars1.githubusercontent.com/u/59975055?v=4"/>
 
 ## Email
 rjhern37@neiu.edu
-
-
